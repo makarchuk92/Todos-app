@@ -1,5 +1,4 @@
 import { Button } from '@mui/material'
-import React from 'react'
 import { changeFilterTodo } from '../../store/todoSlice';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 

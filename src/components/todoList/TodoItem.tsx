@@ -1,4 +1,3 @@
-import React from 'react'
 import { Checkbox, IconButton, Paper } from "@mui/material";
 import { useAppDispatch } from "../../hooks/redux";
 import DeleteIcon from "@mui/icons-material/Delete";

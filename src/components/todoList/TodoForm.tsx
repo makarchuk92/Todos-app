@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FC, useState } from "react";
+import  { ChangeEvent, FC, useState } from "react";
 import { Button, TextField } from "@mui/material";
 import { addTodo } from "../../store/todoSlice";
 import { useAppDispatch } from "../../hooks/redux";
@@ -17,6 +17,11 @@ const TodoForm: FC = () => {
     }
   };
 
+  const addTodoKeyHandler = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key == 'Enter')
+      addTodoHandler()
+  }
+
   const onChangeInputHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
     setError(null);
@@ -27,6 +32,7 @@ const TodoForm: FC = () => {
       <TextField
         value={inputValue}
         onChange={onChangeInputHandler}
+        onKeyDown={addTodoKeyHandler}
         id="standard-helperText"
         label="enter value"
         variant="standard"
